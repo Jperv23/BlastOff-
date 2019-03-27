@@ -1,0 +1,76 @@
+{
+ "space":[
+   {
+    "solarSystem":[
+      {
+       "name": "The Sun",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "Mercury",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "Venus",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "Earth",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "Mars",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "Jupiter",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "Saturn",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "Uranus",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "Neptune",
+       "text": "TBD",
+       "image": "url",
+      }]
+},
+  {
+   "universe":[
+     {
+       "name": "The Milky Way Galaxy",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "Space Rocks",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "Stars",
+       "text": "TBD",
+       "image": "url",
+      },
+      {
+       "name": "The Moon",
+       "text": "TBD",
+       "image": "url",
+      }
+     ]
+    }
+   ]
+ }
