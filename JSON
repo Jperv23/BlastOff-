@@ -5,47 +5,48 @@
       {
        "name": "The Sun",
        "text": "TBD",
-       "image": "url"
+       "image": "https://solarsystem.nasa.gov/system/downloadable_items/1068_oct_1_2015_flare.jpg"
       },
       {
        "name": "Mercury",
        "text": "TBD",
-       "image": "url"
+       "image": "https://solarsystem.nasa.gov/system/stellar_items/image_files/2_feature_1600x900_mercury.jpg"
       },
       {
        "name": "Venus",
        "text": "TBD",
-       "image": "url"
+       "image": ""https://www.sciencemag.org/sites/default/files/styles/inline__450w__
+       no_aspect/public/PIA00104_hires_16x9.jpg?itok=jOaH8vOu"
       },
       {
        "name": "Earth",
        "text": "TBD",
-       "image": "url"
+       "image": "https://solarsystem.nasa.gov/system/stellar_items/image_files/4_earth.jpg"
       },
       {
        "name": "Mars",
        "text": "TBD",
-       "image": "url"
+       "image": "https://mars.nasa.gov/system/downloadable_items/37019_Mars_globe_1840x1840.jpg"
       },
       {
        "name": "Jupiter",
        "text": "TBD",
-       "image": "url"
+       "image": "https://www.nasa.gov/centers/goddard/images/content/381775main_LARGEST_jupiter_sphere_946-710.jpg"
       },
       {
        "name": "Saturn",
        "text": "TBD",
-       "image": "url"
+       "image": "https://solarsystem.nasa.gov/system/stellar_items/image_files/38_saturn_1600x900.jpg"
       },
       {
        "name": "Uranus",
        "text": "TBD",
-       "image": "url"
+       "image": "https://solarsystem.nasa.gov/system/feature_items/images/89_uranus_carousel_1.jpg"
       },
       {
        "name": "Neptune",
        "text": "TBD",
-       "image": "url"
+       "image": "https://solarsystem.nasa.gov/system/downloadable_items/810_PIA01492.jpg"
       }]
 },
   {
@@ -53,22 +54,31 @@
      {
        "name": "The Milky Way Galaxy",
        "text": "TBD",
-       "image": "url"
+       "image": "https://www.nasa.gov/images/content/188404main_hurt_Milky_Way_2005-590_lg.jpg"
       },
       {
-       "name": "Space Rocks",
+       "name": "Asteroids",
        "text": "TBD",
-       "image": "url"
+       "image": "https://www.jpl.nasa.gov/images/asteroid/20150126/asteroid20161103-16.jpg"
       },
       {
        "name": "Stars",
        "text": "TBD",
-       "image": "url"
+       "image": "https://www.nasa.gov/sites/default/files/thumbnails/image/potw1809a.jpg"
       },
       {
        "name": "The Moon",
        "text": "TBD",
-       "image": "url"
+       "image": "https://solarsystem.nasa.gov/system/news_items/main_images/774_edu_distance_to_the_moon.png"
+      },
+       {
+       "name": "Space Rocket",
+       "text": "TBD",
+       "image": "https://www.nasa.gov/images/content/541922main_atlasvcloseup.jpg"
+      },
+       "name: "Satellite",
+       "text": "TBD",
+       "image": "https://www.nasa.gov/sites/default/files/gpm.jpg"
       }
      ]
     }
