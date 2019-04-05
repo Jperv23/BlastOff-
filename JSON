@@ -71,12 +71,13 @@
        "text": "TBD",
        "image": "https://solarsystem.nasa.gov/system/news_items/main_images/774_edu_distance_to_the_moon.png"
       },
-       {
+      {
        "name": "Space Rocket",
        "text": "TBD",
        "image": "https://www.nasa.gov/images/content/541922main_atlasvcloseup.jpg"
       },
-       "name: "Satellite",
+      {
+       "name": "Satellite",
        "text": "TBD",
        "image": "https://www.nasa.gov/sites/default/files/gpm.jpg"
       }
