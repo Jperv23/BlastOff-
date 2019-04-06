@@ -51,12 +51,12 @@
   {
    "universe":[
      {
-       "name": "The Milky Way Galaxy",
+       "name": "Milky Way Galaxy",
        "text": "TBD",
        "image": "https://www.nasa.gov/images/content/188404main_hurt_Milky_Way_2005-590_lg.jpg"
       },
       {
-       "name": "Asteroids",
+       "name": "Space Rocks",
        "text": "TBD",
        "image": "https://www.jpl.nasa.gov/images/asteroid/20150126/asteroid20161103-16.jpg"
       },
@@ -71,14 +71,19 @@
        "image": "https://solarsystem.nasa.gov/system/news_items/main_images/774_edu_distance_to_the_moon.png"
       },
       {
-       "name": "Space Rocket",
+       "name": "Rockets",
        "text": "TBD",
        "image": "https://www.nasa.gov/images/content/541922main_atlasvcloseup.jpg"
       },
       {
-       "name": "Satellite",
+       "name": "Satellites",
        "text": "TBD",
        "image": "https://www.nasa.gov/sites/default/files/gpm.jpg"
+      },
+      {
+       "name": "Space Station",
+       "text": "TBD",
+       "image": "https://www.nasa.gov/sites/default/files/thumbnails/image/m15-132_space_station.jpg"
       }
      ]
     }
