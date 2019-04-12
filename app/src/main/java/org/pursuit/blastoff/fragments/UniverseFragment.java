@@ -1,5 +1,6 @@
 package org.pursuit.blastoff.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,14 +19,13 @@ import org.pursuit.blastoff.model.SpaceResponse;
 import org.pursuit.blastoff.network.RetrofitSingleton;
 import org.pursuit.blastoff.network.SpaceService;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class UniverseFragment extends Fragment {
 
-    private FragmentInterface fragmentInterface;
     private static final String TAG = "UniverseFragment";
+    private FragmenListener fragmenListener;
 
     public static UniverseFragment newInstance() {
         return new UniverseFragment();
@@ -34,11 +34,11 @@ public class UniverseFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof FragmentInterface) {
-            fragmentInterface = (FragmentInterface) context;
+        if (context instanceof FragmenListener) {
+            fragmenListener = (FragmenListener) context;
         } else {
             throw new RuntimeException(context.toString() +
-                    " must implement FragmentInterface");
+                    " must implement FragmenListener");
         }
     }
 
@@ -62,32 +62,26 @@ public class UniverseFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        fragmentInterface = null;
+        fragmenListener = null;
     }
 
+    @SuppressLint("CheckResult")
     public void initRecyclerView(View view) {
         final RecyclerView recyclerView = view.findViewById(R.id.universe_recyclerview);
         recyclerView.setHasFixedSize(true);
         RetrofitSingleton.getRetrofitInstance()
                 .create(SpaceService.class)
                 .getSpaceResponse()
-                .enqueue(new Callback<SpaceResponse>() {
-                    @Override
-                    public void onResponse(Call<SpaceResponse> call,
-                                           Response<SpaceResponse> response) {
-                        Log.e("universeItems: ", response.body().getSpace()
-                                .get(1).getUniverse().get(0).getName());
-                        recyclerView.setAdapter(new UniverseAdapter(
-                                response.body().getSpace().get(1).getUniverse(),
-                                fragmentInterface));
-                        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),
-                                LinearLayoutManager.HORIZONTAL, false));
-                    }
-
-                    @Override
-                    public void onFailure(Call<SpaceResponse> call, Throwable t) {
-                        Log.d(TAG, "onFailure: " + t.getMessage());
-                    }
-                });
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe((SpaceResponse spaceResponse) -> {
+                            Log.e("universeItems: ", spaceResponse.getSpace()
+                                    .get(1).getUniverse().get(0).getName());
+                            recyclerView.setAdapter(new UniverseAdapter(
+                                    spaceResponse.getSpace().get(1).getUniverse(),
+                                    fragmenListener));
+                            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                        }, throwable -> Log.d(TAG, "onFailure: " + throwable)
+                );
     }
 }

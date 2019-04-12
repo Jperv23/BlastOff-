@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.fragments.FragmentInterface;
+import org.pursuit.blastoff.fragments.FragmenListener;
 import org.pursuit.blastoff.model.Universe;
 import org.pursuit.blastoff.view.UniverseViewHolder;
 
@@ -16,12 +16,12 @@ import java.util.List;
 public class UniverseAdapter extends RecyclerView.Adapter<UniverseViewHolder> {
 
     private List<Universe> universeList;
-    private FragmentInterface fragmentInterface;
+    private FragmenListener fragmenListener;
 
     public UniverseAdapter(List<Universe> universeList,
-                           FragmentInterface fragmentInterface) {
+                           FragmenListener fragmenListener) {
         this.universeList = universeList;
-        this.fragmentInterface = fragmentInterface;
+        this.fragmenListener = fragmenListener;
     }
 
     @NonNull
@@ -34,7 +34,7 @@ public class UniverseAdapter extends RecyclerView.Adapter<UniverseViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull UniverseViewHolder spaceViewHolder, int i) {
-        spaceViewHolder.onBind(universeList.get(i), fragmentInterface);
+        spaceViewHolder.onBind(universeList.get(i), fragmenListener);
     }
 
     @Override

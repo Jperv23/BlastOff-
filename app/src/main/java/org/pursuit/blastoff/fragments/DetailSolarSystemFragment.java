@@ -1,13 +1,10 @@
 package org.pursuit.blastoff.fragments;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +12,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
-import org.pursuit.blastoff.NasaWebsiteInterface;
 import org.pursuit.blastoff.R;
 
-public class DetailSolarSystemFragment extends Fragment implements NasaWebsiteInterface {
+public class DetailSolarSystemFragment extends Fragment {
 
-    FragmentInterface fragmentInterface;
+    FragmenListener fragmenListener;
 
     private static final String PARAM1 = "param1";
     private static final String PARAM2 = "param2";
@@ -31,6 +27,7 @@ public class DetailSolarSystemFragment extends Fragment implements NasaWebsiteIn
     private String name;
     private String text;
     private String imageURL;
+    private String url;
 
     private TextView nameView;
     private TextView textView;
@@ -50,11 +47,11 @@ public class DetailSolarSystemFragment extends Fragment implements NasaWebsiteIn
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof FragmentInterface) {
-            fragmentInterface = (FragmentInterface) context;
+        if (context instanceof FragmenListener) {
+            fragmenListener = (FragmenListener) context;
         } else {
             throw new RuntimeException(context.toString() +
-                    " must implement FragmentInterface");
+                    " must implement FragmenListener");
         }
     }
 
@@ -82,7 +79,7 @@ public class DetailSolarSystemFragment extends Fragment implements NasaWebsiteIn
         imageView = view.findViewById(R.id.ss_imageView);
         nameView.setText(name);
         textView.setText(text);
-        Picasso.get()
+        Glide.with(getContext())
                 .load(imageURL)
                 .into(imageView);
         nasaButton = view.findViewById(R.id.planets_nasa_button);
@@ -92,28 +89,25 @@ public class DetailSolarSystemFragment extends Fragment implements NasaWebsiteIn
     @Override
     public void onDetach() {
         super.onDetach();
-        fragmentInterface = null;
+        fragmenListener = null;
     }
 
-    @Override
     public void onButtonClick(Button button) {
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toNasaWebsite();
-            }
-        });
+        button.setOnClickListener(v -> fragmenListener.toNasaWebsiteSS(name, url, getContext()));
     }
 
-    @Override
-    public void toNasaWebsite() {
-        String url = "https://solarsystem.nasa.gov/planets/" + name.toLowerCase() + "/overview/";
-        Uri webPage = Uri.parse(url);
-        Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
-        if (intent.resolveActivity(getContext().getPackageManager()) != null) {
-            startActivity(intent);
-        } else {
-            Log.d("ImplicitIntents", "Can't handle this!");
-        }
-    }
+//    public void toNasaWebsite() {
+//        if(name.equals("The Sun")){
+//            url = "https://solarsystem.nasa.gov/planets/" + name.substring(4,7).toLowerCase() + "/overview/";
+//        }else {
+//            url = "https://solarsystem.nasa.gov/planets/" + name.toLowerCase() + "/overview/";
+//        }
+//        Uri webPage = Uri.parse(url);
+//        Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
+//        if (intent.resolveActivity(getContext().getPackageManager()) != null) {
+//            startActivity(intent);
+//        } else {
+//            Log.d("ImplicitIntents", "Can't handle this!");
+//        }
+//    }
 }

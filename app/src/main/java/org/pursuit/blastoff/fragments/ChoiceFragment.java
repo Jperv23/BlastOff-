@@ -8,13 +8,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import org.pursuit.blastoff.R;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class ChoiceFragment extends Fragment {
 
-    private FragmentInterface fragmentInterface;
+    private FragmenListener fragmenListener;
+    private EditText locationInput;
 
     public static ChoiceFragment newInstance() {
         return new ChoiceFragment();
@@ -23,11 +28,11 @@ public class ChoiceFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof FragmentInterface) {
-            fragmentInterface = (FragmentInterface) context;
-        }else {
+        if (context instanceof FragmenListener) {
+            fragmenListener = (FragmenListener) context;
+        } else {
             throw new RuntimeException(context.toString() +
-                    "must implement FragmentInterface");
+                    "must implement FragmenListener");
         }
     }
 
@@ -47,32 +52,49 @@ public class ChoiceFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setUniverseImage(view);
         setSolarSystemImage(view);
+        setTextViews(view);
+        getLocationInputAndMoveToMap(view);
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        fragmentInterface = null;
+        fragmenListener = null;
     }
 
     public void setUniverseImage(View view) {
-        ImageView universeImage = view.findViewById(R.id.universeImage);
+        GifImageView universeImage = view.findViewById(R.id.universeImage);
         universeImage.isClickable();
-        universeImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fragmentInterface.toUniverseFragment();
-            }
-        });
+        universeImage.setOnClickListener(v -> fragmenListener.toUniverseFragment());
     }
 
     public void setSolarSystemImage(View view) {
-        ImageView solarSystemImage = view.findViewById(R.id.solarSystemImage);
-        solarSystemImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fragmentInterface.toSolarSystemFragment();
-            }
+        GifImageView solarSystemImage = view.findViewById(R.id.solarSystemImage);
+        solarSystemImage.setOnClickListener(v -> fragmenListener.toSolarSystemFragment());
+    }
+
+    public void setTextViews(View view) {
+        TextView universeText = view.findViewById(R.id.universeText);
+        TextView solarText = view.findViewById(R.id.solartext);
+        TextView exploreView = view.findViewById(R.id.explore_textView);
+        TextView beyondView = view.findViewById(R.id.beyond_textView);
+        TextView nasaKids = view.findViewById(R.id.nasaKids);
+        fragmenListener.setTextToSpeechToViews(universeText);
+        fragmenListener.setTextToSpeechToViews(solarText);
+        fragmenListener.setTextToSpeechToViews(exploreView);
+        fragmenListener.setTextToSpeechToViews(beyondView);
+        nasaKids.setOnClickListener(v -> {
+           fragmenListener.toNasaWebsiteHome(getContext());
         });
     }
+
+    public void getLocationInputAndMoveToMap(View view) {
+        locationInput = view.findViewById(R.id.locationInput);
+        Button submit = view.findViewById(R.id.submit);
+        submit.setOnClickListener(v -> {
+            fragmenListener.toMapActivity(locationInput.toString());
+        });
+    }
+
+
 }

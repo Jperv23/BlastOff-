@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.fragments.FragmentInterface;
+import org.pursuit.blastoff.fragments.FragmenListener;
 import org.pursuit.blastoff.model.SolarSystem;
 import org.pursuit.blastoff.view.SolarSystemViewHolder;
 
@@ -16,12 +16,12 @@ import java.util.List;
 public class SolarSyatemAdapter extends RecyclerView.Adapter<SolarSystemViewHolder> {
 
     private List<SolarSystem> solarSystemList;
-    private FragmentInterface fragmentInterface;
+    private FragmenListener fragmenListener;
 
     public SolarSyatemAdapter(List<SolarSystem> solarSystemList,
-                              FragmentInterface fragmentInterface) {
+                              FragmenListener fragmenListener) {
         this.solarSystemList = solarSystemList;
-        this.fragmentInterface = fragmentInterface;
+        this.fragmenListener = fragmenListener;
     }
 
     @NonNull
@@ -34,7 +34,7 @@ public class SolarSyatemAdapter extends RecyclerView.Adapter<SolarSystemViewHold
 
     @Override
     public void onBindViewHolder(@NonNull SolarSystemViewHolder solarSytemViewHolder, int i) {
-        solarSytemViewHolder.onBind(solarSystemList.get(i), fragmentInterface);
+        solarSytemViewHolder.onBind(solarSystemList.get(i), fragmenListener);
     }
 
     @Override
