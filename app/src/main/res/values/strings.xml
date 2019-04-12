@@ -1,4 +1,16 @@
 <resources>
-    <string name="app_name">BlastOff</string>
+    <string name="app_name"></string>
+    <string name="textView_universe">The Universe</string>
+    <string name="textView_solarSystem">Our Solar System</string>
+    <string name="explore_textView">  EXPLORE</string>
+    <string name="text_tester">NAME/TITLE</string>
+    <string name="welcome_msg">Welcome! \nBlastOff is the perfect introduction to the mind-bogglingly thing space.
+        \nYou can explore topics such as the Milky Way galaxy, stars, and
+        our solar system! \nBlastOff goes beyond with a Text-to-Speech feature to help kids who are learning
+        to read and allows them to access the NASA Kids Club website to continue their space exploration!</string>
+    <string name="about_the_app">ABOUT THE APP</string>
+    <string name="nasa_kids_club_textView">NASA KIDS CLUB</string>
+    <string name="find_planetarium_textView">FIND PLANETARIUM</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
