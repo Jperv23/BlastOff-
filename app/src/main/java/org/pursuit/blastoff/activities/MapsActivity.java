@@ -1,24 +1,20 @@
 package org.pursuit.blastoff.activities;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.pursuit.blastoff.R;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -46,28 +42,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         uiSettings.setMyLocationButtonEnabled(true);
 
         Geocoder geocoder = new Geocoder(getApplicationContext());
-        List<Address> address;
+        List<Address> address = new ArrayList<>();
         LatLng p1 = null;
 
-        try {
-            address = geocoder.getFromLocationName(
-                    locationInput, 5);
-            Address location = address.get(0);
-            p1 = new LatLng(location.getLatitude(), location.getLongitude());
-            gMap.addMarker(new MarkerOptions()
-                    .position(p1).title("PLANETARIUM")
-                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_place)));
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (ActivityCompat.checkSelfPermission(
-                this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(
-                        this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION}, 1020);
-        }else{
+//        try {
+//            address = geocoder.getFromLocationName(
+//                    locationInput, 5);
+//            Address location = address.get(0);
+//            p1 = new LatLng(location.getLatitude(), location.getLongitude());
+//            gMap.addMarker(new MarkerOptions()
+//                    .position(p1).title("PLANETARIUM")
+//                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_place)));
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        if (ActivityCompat.checkSelfPermission(
+//                this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
+//                ActivityCompat.checkSelfPermission(
+//                        this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(
+//                    this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION}, 1020);
+//        }else{
 //            mMap.setMyLocationEnabled(true);
 //            mFusedLocationClient.getLastLocation()
 //                    .addOnSuccessListener(this, (OnSuccessListener<Location>) location -> {
@@ -80,6 +76,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 ////                                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_android)));
 //                        }
 //                    });
-        }
+//        }
     }
 }
