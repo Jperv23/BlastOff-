@@ -29,6 +29,7 @@ public class UniverseViewHolder extends RecyclerView.ViewHolder {
         fragmenListener.setTextToSpeechToViews(nameView);
         Glide.with(itemView)
                 .load(universe.getImage())
+                .placeholder(R.drawable.ic_launcher_foreground)
                 .into(imageView);
         itemView.setOnClickListener(v -> {
             String name = universe.getName();
