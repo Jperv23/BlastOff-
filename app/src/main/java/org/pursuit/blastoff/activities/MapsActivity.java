@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.map;
+package org.pursuit.blastoff.activities;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;

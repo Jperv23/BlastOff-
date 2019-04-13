@@ -21,7 +21,7 @@ public interface FragmenListener {
 
     void toNasaWebsiteHome(Context context);
 
-    void toNasaWebsiteSS(String name, String url, Context context);
+    void toNasaWebsiteSS(String name, Context context);
 
     void toMapActivity(String locationInput);
 }

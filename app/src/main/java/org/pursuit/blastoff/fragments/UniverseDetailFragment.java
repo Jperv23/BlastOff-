@@ -16,31 +16,26 @@ import com.bumptech.glide.Glide;
 
 import org.pursuit.blastoff.R;
 
-public class DetailUniverseFragment extends Fragment {
+public class UniverseDetailFragment extends Fragment {
 
     FragmenListener fragmenListener;
 
-    private static final String PARAM1 = "param1";
-    private static final String PARAM2 = "param2";
-    private static final String PARAM3 = "param3";
+    private static final String NAME_KEY = "param1";
+    private static final String TEXT_KEY = "param2";
+    private static final String IMAGE_URL_KEY = "param3";
 
     private String name;
     private String text;
     private String imageURL;
 
-    private TextView nameView;
-    private TextView textView;
-    private ImageView imageView;
-    private Button nasaButton;
-
-    public static DetailUniverseFragment newInstance(String name, String text, String image) {
-        DetailUniverseFragment detailUniverseFragment = new DetailUniverseFragment();
+    public static UniverseDetailFragment newInstance(String name, String text, String image) {
+        UniverseDetailFragment universeDetailFragment = new UniverseDetailFragment();
         Bundle args = new Bundle();
-        args.putString(PARAM1, name);
-        args.putString(PARAM2, text);
-        args.putString(PARAM3, image);
-        detailUniverseFragment.setArguments(args);
-        return detailUniverseFragment;
+        args.putString(NAME_KEY, name);
+        args.putString(TEXT_KEY, text);
+        args.putString(IMAGE_URL_KEY, image);
+        universeDetailFragment.setArguments(args);
+        return universeDetailFragment;
     }
 
     @Override
@@ -58,14 +53,14 @@ public class DetailUniverseFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            name = getArguments().getString(PARAM1);
-            text = getArguments().getString(PARAM2);
-            imageURL = getArguments().getString(PARAM3);
+            name = getArguments().getString(NAME_KEY);
+            text = getArguments().getString(TEXT_KEY);
+            imageURL = getArguments().getString(IMAGE_URL_KEY);
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_detail_universe, container, false);
     }
@@ -73,15 +68,15 @@ public class DetailUniverseFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        nameView = view.findViewById(R.id.uni_name_textView);
-        textView = view.findViewById(R.id.uni_text_texView);
-        imageView = view.findViewById(R.id.uni_imageView);
+        TextView nameView = view.findViewById(R.id.uni_name_textView);
+        TextView textView = view.findViewById(R.id.uni_text_texView);
+        ImageView imageView = view.findViewById(R.id.uni_imageView);
         nameView.setText(name);
         textView.setText((text));
-        Glide.with(getContext())
+        Glide.with(requireContext())
                 .load(imageURL)
                 .into(imageView);
-        nasaButton = view.findViewById(R.id.nasa_button);
+        Button nasaButton = view.findViewById(R.id.nasa_button);
         onButtonClick(nasaButton);
     }
 
@@ -94,13 +89,4 @@ public class DetailUniverseFragment extends Fragment {
     public void onButtonClick(Button button) {
         button.setOnClickListener(v -> fragmenListener.toNasaWebsiteHome(getContext()));
     }
-
-//    public void toNasaWebsite() {
-//        String url = "https://www.nasa.gov/kidsclub/index.html";
-//        Uri webPage = Uri.parse(url);
-//        Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
-//        if (intent.resolveActivity(getContext().getPackageManager()) != null) {
-//            startActivity(intent);
-//        }
-//    }
 }

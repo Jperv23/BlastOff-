@@ -3,6 +3,7 @@ package org.pursuit.blastoff.model;
 public class Universe {
 
     private String name;
+    private String fact1;
     private String text;
     private String image;
 

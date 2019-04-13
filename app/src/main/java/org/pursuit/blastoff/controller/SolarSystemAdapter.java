@@ -13,12 +13,12 @@ import org.pursuit.blastoff.view.SolarSystemViewHolder;
 
 import java.util.List;
 
-public class SolarSyatemAdapter extends RecyclerView.Adapter<SolarSystemViewHolder> {
+public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemViewHolder> {
 
     private List<SolarSystem> solarSystemList;
     private FragmenListener fragmenListener;
 
-    public SolarSyatemAdapter(List<SolarSystem> solarSystemList,
+    public SolarSystemAdapter(List<SolarSystem> solarSystemList,
                               FragmenListener fragmenListener) {
         this.solarSystemList = solarSystemList;
         this.fragmenListener = fragmenListener;
