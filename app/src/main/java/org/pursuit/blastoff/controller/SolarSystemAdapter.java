@@ -28,7 +28,7 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemViewHold
     @Override
     public SolarSystemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.solarsystem_itemview, viewGroup, false);
+                .inflate(R.layout.itemview_solar_system, viewGroup, false);
         return new SolarSystemViewHolder(view);
     }
 

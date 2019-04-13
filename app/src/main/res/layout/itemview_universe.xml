@@ -5,18 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="600dp"
-    android:layout_marginBottom="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardBackgroundColor="@color/colorPrimary">
+    android:layout_height="300dp">
 
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@color/cons_layout_background">
 
         <ImageView
@@ -40,7 +34,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/round_text_view"
+            android:background="@color/imageView_background_2"
             android:fontFamily="@font/aspaceregular"
             android:gravity="center"
             android:text="@string/text_tester"
@@ -52,8 +46,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/u_image" />
-
-
 
     </android.support.constraint.ConstraintLayout>
 
