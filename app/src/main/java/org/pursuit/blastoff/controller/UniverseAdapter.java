@@ -28,7 +28,7 @@ public class UniverseAdapter extends RecyclerView.Adapter<UniverseViewHolder> {
     @Override
     public UniverseViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.universe_itemview, viewGroup, false);
+                .inflate(R.layout.itemview_universe, viewGroup, false);
         return new UniverseViewHolder(view);
     }
 
