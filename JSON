@@ -4,46 +4,64 @@
     "solarSystem":[
       {
        "name": "The Sun",
-       "text": "TBD",
+       "fact1": "The energy from the sun is called the solar wind",
+       "fact2": "Sudden huge explosions of energy are called solar flares",
+       "text": "The sun is the star at the middle of our solar system. It provides heat and light for life on earth. The sun is so big its diameter is 109 times that of earth! It is made of hydrogen and helium gas, with a surface temperature of 9,932 degrees fahrenheit.",
        "image": "https://solarsystem.nasa.gov/system/downloadable_items/1068_oct_1_2015_flare.jpg"
       },
       {
        "name": "Mercury",
-       "text": "TBD",
+       "fact1": "Mercury is the closest planet to the sun.",
+       "fact2": "Mercury has one the largest impact craters in the solar system.",
+       "text": "Mercury looks very similar to the surface of our moon, and it is covered in craters made when huge asteroids crashed into the surface. It is so dense in Mercury, it has a large core made of pure molten iron.",
        "image": "https://solarsystem.nasa.gov/system/downloadable_items/1073_PIA16853.jpg"
       },
       {
        "name": "Venus",
+        "fact1": "",
+       "fact2": "",
        "text": "TBD",
        "image": "https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/PIA00104_hires_16x9.jpg?itok=jOaH8vOu"
       },
       {
        "name": "Earth",
+        "fact1": "",
+       "fact2": "",
        "text": "TBD",
        "image": "https://solarsystem.nasa.gov/system/stellar_items/image_files/4_earth.jpg"
       },
       {
        "name": "Mars",
+        "fact1": "",
+       "fact2": "",
        "text": "TBD",
        "image": "https://mars.nasa.gov/system/downloadable_items/37019_Mars_globe_1840x1840.jpg"
       },
       {
        "name": "Jupiter",
+        "fact1": "",
+       "fact2": "",
        "text": "TBD",
        "image": "https://www.nasa.gov/centers/goddard/images/content/381775main_LARGEST_jupiter_sphere_946-710.jpg"
       },
       {
        "name": "Saturn",
+        "fact1": "",
+       "fact2": "",
        "text": "TBD",
        "image": "https://solarsystem.nasa.gov/system/resources/detail_files/14379_IMG003379.jpg"
       },
       {
        "name": "Uranus",
+        "fact1": "",
+       "fact2": "",
        "text": "TBD",
        "image": "https://solarsystem.nasa.gov/system/feature_items/images/89_uranus_carousel_1.jpg"
       },
       {
        "name": "Neptune",
+       "fact1": "",
+       "fact2": "",
        "text": "TBD",
        "image": "https://solarsystem.nasa.gov/system/downloadable_items/810_PIA01492.jpg"
       }]
