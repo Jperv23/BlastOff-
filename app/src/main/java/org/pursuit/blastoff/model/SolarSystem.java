@@ -3,6 +3,8 @@ package org.pursuit.blastoff.model;
 public class SolarSystem {
 
     private String name;
+    private String fact1;
+    private String fact2;
     private String text;
     private String image;
 

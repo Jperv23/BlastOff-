@@ -33,13 +33,13 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".map.MapsActivity"
+            android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
         <activity
-            android:name=".HostActivity"
+            android:name=".activities.HostActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activities.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

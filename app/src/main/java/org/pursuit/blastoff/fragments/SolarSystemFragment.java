@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.controller.SolarSyatemAdapter;
+import org.pursuit.blastoff.controller.SolarSystemAdapter;
 import org.pursuit.blastoff.model.SpaceResponse;
 import org.pursuit.blastoff.network.RetrofitSingleton;
 import org.pursuit.blastoff.network.SpaceService;
@@ -48,7 +48,7 @@ public class SolarSystemFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_solar_system, container, false);
     }
@@ -77,7 +77,7 @@ public class SolarSystemFragment extends Fragment {
                 .subscribe((SpaceResponse spaceResponse) -> {
                             Log.e("solarSystemItems: ", spaceResponse.getSpace()
                                     .get(0).getSolarSystem().get(0).getName());
-                            recyclerView.setAdapter(new SolarSyatemAdapter(
+                            recyclerView.setAdapter(new SolarSystemAdapter(
                                     spaceResponse.getSpace().get(0).getSolarSystem(),
                                     fragmenListener));
                             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

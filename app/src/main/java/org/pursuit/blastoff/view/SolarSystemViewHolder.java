@@ -27,7 +27,6 @@ public class SolarSystemViewHolder extends RecyclerView.ViewHolder {
 
     public void onBind(final SolarSystem solarSystem,
                        final FragmenListener fragmenListener) {
-        Log.e("nameOfSolarSystem: ", solarSystem.getName());
         nameView.setText(solarSystem.getName());
         fragmenListener.setTextToSpeechToViews(nameView);
         Glide.with(itemView)

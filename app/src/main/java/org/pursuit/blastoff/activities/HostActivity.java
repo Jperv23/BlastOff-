@@ -1,4 +1,4 @@
-package org.pursuit.blastoff;
+package org.pursuit.blastoff.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,13 +14,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import org.pursuit.blastoff.R;
 import org.pursuit.blastoff.fragments.ChoiceFragment;
-import org.pursuit.blastoff.fragments.DetailSolarSystemFragment;
-import org.pursuit.blastoff.fragments.DetailUniverseFragment;
+import org.pursuit.blastoff.fragments.SolarSystemDetailFragment;
+import org.pursuit.blastoff.fragments.UniverseDetailFragment;
 import org.pursuit.blastoff.fragments.FragmenListener;
 import org.pursuit.blastoff.fragments.SolarSystemFragment;
 import org.pursuit.blastoff.fragments.UniverseFragment;
-import org.pursuit.blastoff.map.MapsActivity;
 
 import java.util.Locale;
 
@@ -72,8 +72,6 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
         Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
         if (intent.resolveActivity(getApplicationContext().getPackageManager()) != null) {
             startActivity(intent);
-        } else {
-            Log.d("ImplicitIntents", "Can't handle this!");
         }
     }
 
@@ -83,8 +81,6 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
         Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
         if (intent.resolveActivity(getApplicationContext().getPackageManager()) != null) {
             startActivity(intent);
-        } else {
-            Log.d("ImplicitIntents", "Can't handle this!");
         }
     }
 
@@ -116,7 +112,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     public void toDetailUniverseFragment(String name, String text, String image) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container,
-                        DetailUniverseFragment.newInstance(name, text, image))
+                        UniverseDetailFragment.newInstance(name, text, image))
                 .addToBackStack("detailUniverse")
                 .commit();
     }
@@ -125,7 +121,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     public void toDetailSolarSystemFragment(String name, String text, String image) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container,
-                        DetailSolarSystemFragment.newInstance(name, text, image))
+                        SolarSystemDetailFragment.newInstance(name, text, image))
                 .addToBackStack("detailSolarSystem")
                 .commit();
     }
@@ -167,7 +163,8 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     }
 
     @Override
-    public void toNasaWebsiteSS(String name, String url, Context context) {
+    public void toNasaWebsiteSS(String name, Context context) {
+        String url;
         if(name.equals("The Sun")){
             url = "https://solarsystem.nasa.gov/planets/" + name.substring(4,7).toLowerCase() + "/overview/";
         }else {
@@ -177,8 +174,6 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
         Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             startActivity(intent);
-        } else {
-            Log.d("ImplicitIntents", "Can't handle this!");
         }
     }
 
