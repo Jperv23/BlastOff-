@@ -7,8 +7,9 @@ public class Universe {
     private String text;
     private String image;
 
-    public Universe(String name, String text, String image) {
+    public Universe(String name, String fact1, String text, String image) {
         this.name = name;
+        this.fact1 = fact1;
         this.text = text;
         this.image = image;
     }
@@ -23,5 +24,9 @@ public class Universe {
 
     public String getImage() {
         return image;
+    }
+
+    public String getFact1() {
+        return fact1;
     }
 }

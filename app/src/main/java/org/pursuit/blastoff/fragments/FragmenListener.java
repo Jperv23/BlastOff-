@@ -11,9 +11,9 @@ public interface FragmenListener {
 
     void toSolarSystemFragment();
 
-    void toDetailUniverseFragment(String name, String text, String image);
+    void toDetailUniverseFragment(String name, String fact1, String text, String image);
 
-    void toDetailSolarSystemFragment(String name, String text, String image);
+    void toDetailSolarSystemFragment(String name, String fact1, String fact2, String text, String image);
 
     void initTextToSpeech(final Context context);
 

@@ -32,10 +32,11 @@ public class UniverseViewHolder extends RecyclerView.ViewHolder {
                 .into(imageView);
         itemView.setOnClickListener(v -> {
             String name = universe.getName();
+            String fact1 = universe.getFact1();
             String text = universe.getText();
             String imageURL = universe.getImage();
             fragmenListener.toDetailUniverseFragment(
-                    name, text, imageURL
+                    name, fact1, text, imageURL
             );
         });
     }

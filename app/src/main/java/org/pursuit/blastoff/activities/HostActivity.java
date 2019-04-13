@@ -109,19 +109,21 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     }
 
     @Override
-    public void toDetailUniverseFragment(String name, String text, String image) {
+    public void toDetailUniverseFragment(
+            String name, String fact1, String text, String image) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container,
-                        UniverseDetailFragment.newInstance(name, text, image))
+                        UniverseDetailFragment.newInstance(name, fact1, text, image))
                 .addToBackStack("detailUniverse")
                 .commit();
     }
 
     @Override
-    public void toDetailSolarSystemFragment(String name, String text, String image) {
+    public void toDetailSolarSystemFragment(
+            String name, String fact1, String fact2, String text, String image) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container,
-                        SolarSystemDetailFragment.newInstance(name, text, image))
+                        SolarSystemDetailFragment.newInstance(name, fact1, fact2, text, image))
                 .addToBackStack("detailSolarSystem")
                 .commit();
     }
