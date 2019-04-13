@@ -30,6 +30,7 @@ public class SolarSystemViewHolder extends RecyclerView.ViewHolder {
         fragmenListener.setTextToSpeechToViews(nameView);
         Glide.with(itemView)
                 .load(solarSystem.getImage())
+                .placeholder(R.drawable.ic_launcher_foreground)
                 .apply(RequestOptions.circleCropTransform())
                 .into(imageView);
         itemView.setOnClickListener(v -> {
