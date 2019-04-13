@@ -2,7 +2,6 @@ package org.pursuit.blastoff.view;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,16 +32,15 @@ public class SolarSystemViewHolder extends RecyclerView.ViewHolder {
                 .load(solarSystem.getImage())
                 .apply(RequestOptions.circleCropTransform())
                 .into(imageView);
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = solarSystem.getName();
-                String text = solarSystem.getText();
-                String imageURL = solarSystem.getImage();
-                fragmenListener.toDetailSolarSystemFragment(
-                        name, text, imageURL
-                );
-            }
+        itemView.setOnClickListener(v -> {
+            String name = solarSystem.getName();
+            String fact1 = solarSystem.getFact1();
+            String fact2 = solarSystem.getFact2();
+            String text = solarSystem.getText();
+            String imageURL = solarSystem.getImage();
+            fragmenListener.toDetailSolarSystemFragment(
+                    name, fact1, fact2, text, imageURL
+            );
         });
     }
 }

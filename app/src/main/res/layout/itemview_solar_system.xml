@@ -4,28 +4,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="600dp"
-    android:layout_marginBottom="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardBackgroundColor="@color/colorPrimary">
+    android:layout_height="400dp"
+    android:background="@color/imageView_background_2">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/cons_layout_background"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
+        android:background="@color/cons_layout_background">
 
         <ImageView
             android:id="@+id/s_image"
             android:layout_width="match_parent"
-            android:layout_height="450dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="300dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:foregroundGravity="center"
-            app:layout_constraintBottom_toTopOf="@+id/s_name"
+            app:layout_constraintBottom_toTopOf="@+id/u_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -44,10 +39,11 @@
             android:textStyle="bold"
             android:textSize="30sp"
             android:fontFamily="@font/aspaceregular"
-            android:background="@drawable/round_text_view"
+            android:background="@color/imageView_background_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             app:layout_constraintTop_toBottomOf="@+id/s_image"/>
 
     </android.support.constraint.ConstraintLayout>
