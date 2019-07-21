@@ -57,10 +57,8 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.github_link:
-                toGitHubPage();
                 break;
             case R.id.linkedIn_link:
-                toLinkedInPage();
                 break;
         }
         return true;
@@ -87,6 +85,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     @Override
     public void toChoiceFragment() {
         getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 .replace(R.id.fragment_container, ChoiceFragment.newInstance())
                 .addToBackStack("choice")
                 .commit();
@@ -95,6 +94,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     @Override
     public void toUniverseFragment() {
         getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 .replace(R.id.fragment_container, UniverseFragment.newInstance())
                 .addToBackStack("universe")
                 .commit();
@@ -103,6 +103,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     @Override
     public void toSolarSystemFragment() {
         getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 .replace(R.id.fragment_container, SolarSystemFragment.newInstance())
                 .addToBackStack("solarSystem")
                 .commit();
@@ -112,6 +113,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     public void toDetailUniverseFragment(
             String name, String fact1, String text, String image) {
         getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 .replace(R.id.fragment_container,
                         UniverseDetailFragment.newInstance(name, fact1, text, image))
                 .addToBackStack("detailUniverse")
@@ -122,6 +124,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     public void toDetailSolarSystemFragment(
             String name, String fact1, String fact2, String text, String image) {
         getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 .replace(R.id.fragment_container,
                         SolarSystemDetailFragment.newInstance(name, fact1, fact2, text, image))
                 .addToBackStack("detailSolarSystem")
