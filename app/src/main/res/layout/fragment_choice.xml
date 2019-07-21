@@ -17,7 +17,7 @@
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/universeImage"
-            android:layout_width="319dp"
+            android:layout_width="314dp"
             android:layout_height="250dp"
             android:layout_marginTop="4dp"
             android:background="@color/imageView_background_2"
@@ -43,9 +43,8 @@
 
         <TextView
             android:id="@+id/explore_textView"
-            android:layout_width="96dp"
+            android:layout_width="94dp"
             android:layout_height="600dp"
-            android:layout_marginTop="4dp"
             android:background="@color/blue_background"
             android:fontFamily="@font/aspacebold                            "
             android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -57,6 +56,7 @@
             android:textSize="70sp"
             android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -102,7 +102,7 @@
 
         <TextView
             android:id="@+id/beyond_textView"
-            android:layout_width="96dp"
+            android:layout_width="94dp"
             android:layout_height="600dp"
             android:background="@color/blue_background"
             android:fontFamily="@font/aspacebold                            "
@@ -125,8 +125,7 @@
         <TextView
             android:id="@+id/nasaKids"
             android:layout_width="300dp"
-            android:layout_height="308dp"
-            android:layout_marginTop="36dp"
+            android:layout_height="300dp"
             android:layout_marginEnd="8dp"
             android:background="@color/imageViews_background"
             android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -141,37 +140,37 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/solartext" />
 
-            <TextView
-                android:id="@+id/find"
-                android:layout_width="300dp"
-                android:layout_height="36dp"
-                android:background="@drawable/round_text_view"
-                android:fontFamily="@font/aspaceregular"
-                android:gravity="center"
-                android:text="@string/find_planetarium_textView"
-                android:textAlignment="center"
-                android:textColor="@color/text_color"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/locationInput"
-                app:layout_constraintHorizontal_bias="0.927"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+        <TextView
+            android:id="@+id/find"
+            android:layout_width="300dp"
+            android:layout_height="36dp"
+            android:background="@drawable/round_text_view"
+            android:fontFamily="@font/aspaceregular"
+            android:gravity="center"
+            android:text="@string/find_planetarium_textView"
+            android:textAlignment="center"
+            android:textColor="@color/text_color"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/locationInput"
+            app:layout_constraintHorizontal_bias="0.927"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
 
-            <EditText
-                android:id="@+id/locationInput"
-                android:layout_width="300dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@color/text_color"
-                android:gravity="center"
-                android:hint="ENTER CITY/ZIPCODE"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/submit"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/locationInput"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/text_color"
+            android:gravity="center"
+            android:hint="AVAILABLE SOON"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/submit"
@@ -182,7 +181,6 @@
             android:background="@drawable/round_button"
             android:foreground="?attr/selectableItemBackground"
             android:gravity="center"
-            android:text="SUBMIT"
             android:textAlignment="center"
             android:textColor="@color/text_color"
             android:textSize="24sp"

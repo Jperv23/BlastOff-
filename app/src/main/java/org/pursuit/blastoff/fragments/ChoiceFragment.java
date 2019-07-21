@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import org.pursuit.blastoff.R;
@@ -19,7 +18,7 @@ import pl.droidsonroids.gif.GifImageView;
 public class ChoiceFragment extends Fragment {
 
     private FragmenListener fragmenListener;
-    private EditText locationInput;
+    private TextView locationInput;
 
     public static ChoiceFragment newInstance() {
         return new ChoiceFragment();
@@ -92,7 +91,7 @@ public class ChoiceFragment extends Fragment {
         locationInput = view.findViewById(R.id.locationInput);
         Button submit = view.findViewById(R.id.submit);
         submit.setOnClickListener(v -> {
-            fragmenListener.toMapActivity(locationInput.toString());
+//            fragmenListener.toMapActivity(locationInput.toString());
         });
     }
 

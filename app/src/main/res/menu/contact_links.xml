@@ -6,14 +6,14 @@
         android:id="@+id/github_link"
         android:icon="@drawable/ic_launcher_foreground"
         android:orderInCategory="0"
-        android:title="GitHub"
+        android:title="Coming Soon"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/linkedIn_link"
         android:icon="@drawable/ic_launcher_foreground"
         android:orderInCategory="0"
-        android:title="LinkedIn"
+        android:title="Coming Soon"
         app:showAsAction="never" />
 
 </menu>
