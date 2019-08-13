@@ -7,10 +7,13 @@ import retrofit2.http.GET;
 
 public interface SpaceService {
 
-    String ENDPOINT = "/Jperv23/BlastOff-/master/JSON";
+    String ENDPOINT = "/Jperzval/FanDuel_CodingChallenge/master/app/sampledata/sample.json?";
+
 
     @GET(ENDPOINT)
     Observable<SpaceResponse> getSpaceResponse();
+
+
 
 
 }

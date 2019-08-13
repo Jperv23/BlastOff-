@@ -15,13 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.MapsActivity"
+            android:name=".ui.activities.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
         <activity
-            android:name=".activities.HostActivity"
+            android:name=".ui.activities.HostActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".ui.activities.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

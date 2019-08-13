@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.fragments;
+package org.pursuit.blastoff.ui;
 
 import android.content.Context;
 import android.widget.TextView;

@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.fragments;
+package org.pursuit.blastoff.ui.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,10 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.controller.UniverseAdapter;
+import org.pursuit.blastoff.ui.UniverseAdapter;
 import org.pursuit.blastoff.model.SpaceResponse;
 import org.pursuit.blastoff.network.RetrofitSingleton;
 import org.pursuit.blastoff.network.SpaceService;
+import org.pursuit.blastoff.ui.FragmenListener;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;

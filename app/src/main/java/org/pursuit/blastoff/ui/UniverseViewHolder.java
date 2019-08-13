@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.view;
+package org.pursuit.blastoff.ui;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.fragments.FragmenListener;
 import org.pursuit.blastoff.model.Universe;
 
 public class UniverseViewHolder extends RecyclerView.ViewHolder {

@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.activities;
+package org.pursuit.blastoff.ui.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;

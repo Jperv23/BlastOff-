@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.view;
+package org.pursuit.blastoff.ui;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.fragments.FragmenListener;
 import org.pursuit.blastoff.model.SolarSystem;
 
 public class SolarSystemViewHolder extends RecyclerView.ViewHolder {

@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.fragments;
+package org.pursuit.blastoff.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import org.pursuit.blastoff.R;
+import org.pursuit.blastoff.ui.FragmenListener;
 
 public class UniverseDetailFragment extends Fragment {
 

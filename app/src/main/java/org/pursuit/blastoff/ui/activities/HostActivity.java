@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.activities;
+package org.pursuit.blastoff.ui.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,12 +15,12 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.fragments.ChoiceFragment;
-import org.pursuit.blastoff.fragments.SolarSystemDetailFragment;
-import org.pursuit.blastoff.fragments.UniverseDetailFragment;
-import org.pursuit.blastoff.fragments.FragmenListener;
-import org.pursuit.blastoff.fragments.SolarSystemFragment;
-import org.pursuit.blastoff.fragments.UniverseFragment;
+import org.pursuit.blastoff.ui.FragmenListener;
+import org.pursuit.blastoff.ui.fragments.ChoiceFragment;
+import org.pursuit.blastoff.ui.fragments.SolarSystemDetailFragment;
+import org.pursuit.blastoff.ui.fragments.SolarSystemFragment;
+import org.pursuit.blastoff.ui.fragments.UniverseDetailFragment;
+import org.pursuit.blastoff.ui.fragments.UniverseFragment;
 
 import java.util.Locale;
 

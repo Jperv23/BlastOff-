@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.controller;
+package org.pursuit.blastoff.ui;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.fragments.FragmenListener;
 import org.pursuit.blastoff.model.Universe;
-import org.pursuit.blastoff.view.UniverseViewHolder;
 
 import java.util.List;
 

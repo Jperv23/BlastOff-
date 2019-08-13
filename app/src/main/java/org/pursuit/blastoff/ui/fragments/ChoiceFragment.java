@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.fragments;
+package org.pursuit.blastoff.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import org.pursuit.blastoff.R;
+import org.pursuit.blastoff.ui.FragmenListener;
 
 import pl.droidsonroids.gif.GifImageView;
 
