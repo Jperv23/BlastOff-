@@ -15,7 +15,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.ui.FragmenListener;
+import org.pursuit.blastoff.ui.fragments.FragmentListener;
 import org.pursuit.blastoff.ui.fragments.ChoiceFragment;
 import org.pursuit.blastoff.ui.fragments.SolarSystemDetailFragment;
 import org.pursuit.blastoff.ui.fragments.SolarSystemFragment;
@@ -24,7 +24,7 @@ import org.pursuit.blastoff.ui.fragments.UniverseFragment;
 
 import java.util.Locale;
 
-public class HostActivity extends AppCompatActivity implements FragmenListener {
+public class HostActivity extends AppCompatActivity implements FragmentListener {
 
     private TextToSpeech textToSpeech;
 
@@ -33,17 +33,31 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_host);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar);
+        Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
         setCollapsingToolbar();
 
-        toChoiceFragment();
+        onChoiceFragmentInteraction();
         initTextToSpeech(getApplicationContext());
     }
 
     public void setCollapsingToolbar() {
         CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolBar);
         collapsingToolbarLayout.setScrimAnimationDuration(500);
+    }
+
+    public void initTextToSpeech(final Context context) {
+        textToSpeech = new TextToSpeech(context, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                int language = textToSpeech.setLanguage(Locale.US);
+                if (language == TextToSpeech.LANG_MISSING_DATA
+                        || language == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "The Language is not supported!");
+                } else {
+                    Log.i("TTS", "Language Supported.");
+                }
+            }
+        });
     }
 
     @Override
@@ -82,8 +96,9 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
         }
     }
 
+
     @Override
-    public void toChoiceFragment() {
+    public void onChoiceFragmentInteraction() {
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 .replace(R.id.fragment_container, ChoiceFragment.newInstance())
@@ -92,7 +107,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     }
 
     @Override
-    public void toUniverseFragment() {
+    public void onUniverseFragmentInteraction() {
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 .replace(R.id.fragment_container, UniverseFragment.newInstance())
@@ -101,7 +116,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     }
 
     @Override
-    public void toSolarSystemFragment() {
+    public void onSolarSystemFragmentInteraction() {
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 .replace(R.id.fragment_container, SolarSystemFragment.newInstance())
@@ -110,7 +125,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     }
 
     @Override
-    public void toDetailUniverseFragment(
+    public void onDetailUniverseFragmentInteraction(
             String name, String fact1, String text, String image) {
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
@@ -121,7 +136,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     }
 
     @Override
-    public void toDetailSolarSystemFragment(
+    public void onDetailSolarSystemFragmentInteraction(
             String name, String fact1, String fact2, String text, String image) {
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
@@ -132,33 +147,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     }
 
     @Override
-    public void initTextToSpeech(final Context context) {
-        textToSpeech = new TextToSpeech(context, status -> {
-            if (status == TextToSpeech.SUCCESS) {
-                int language = textToSpeech.setLanguage(Locale.US);
-                if (language == TextToSpeech.LANG_MISSING_DATA
-                        || language == TextToSpeech.LANG_NOT_SUPPORTED) {
-                    Log.e("TTS", "The Language is not supported!");
-                } else {
-                    Log.i("TTS", "Language Supported.");
-                }
-            }
-        });
-    }
-
-    @Override
-    public void setTextToSpeechToViews(final TextView textView) {
-        textView.setOnClickListener(v -> {
-            int speakText = textToSpeech.speak(String.valueOf(textView.getText()),
-                    TextToSpeech.QUEUE_FLUSH, null);
-            if (speakText == TextToSpeech.ERROR) {
-                Log.e("TTS", "Error in converting Text to Speech!");
-            }
-        });
-    }
-
-    @Override
-    public void toNasaWebsiteHome(Context context) {
+    public void navigateToNasaWebsiteHome(Context context) {
         String url = "https://www.nasa.gov/kidsclub/index.html";
         Uri webPage = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
@@ -168,7 +157,7 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     }
 
     @Override
-    public void toNasaWebsiteSS(String name, Context context) {
+    public void navigateToNasaWebsiteSolarSystem(String name, Context context) {
         String url;
         if(name.equals("The Sun")){
             url = "https://solarsystem.nasa.gov/planets/" + name.substring(4,7).toLowerCase() + "/overview/";
@@ -183,10 +172,20 @@ public class HostActivity extends AppCompatActivity implements FragmenListener {
     }
 
     @Override
-    public void toMapActivity(String input) {
+    public void onMapActivityInteraction(String input) {
         Intent intent = new Intent(HostActivity.this, MapsActivity.class);
         intent.putExtra("location", input);
         startActivity(intent);
     }
 
+    @Override
+    public void setTextToSpeechToViews(final TextView textView) {
+        textView.setOnClickListener(v -> {
+            int speakText = textToSpeech.speak(String.valueOf(textView.getText()),
+                    TextToSpeech.QUEUE_FLUSH, null);
+            if (speakText == TextToSpeech.ERROR) {
+                Log.e("TTS", "Error in converting Text to Speech!");
+            }
+        });
+    }
 }

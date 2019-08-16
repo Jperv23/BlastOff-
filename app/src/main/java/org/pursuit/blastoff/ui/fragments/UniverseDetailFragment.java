@@ -15,11 +15,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.ui.FragmenListener;
 
 public class UniverseDetailFragment extends Fragment {
 
-    FragmenListener fragmenListener;
+    private FragmentListener fragmentListener;
 
     private static final String NAME_KEY = "param1";
     private static final String FACT1_KEY = "param2";
@@ -46,11 +45,11 @@ public class UniverseDetailFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof FragmenListener) {
-            fragmenListener = (FragmenListener) context;
+        if (context instanceof FragmentListener) {
+            fragmentListener = (FragmentListener) context;
         } else {
             throw new RuntimeException(context.toString() +
-                    " must implement FragmenListener");
+                    " must implement FragmentListener");
         }
     }
 
@@ -86,11 +85,11 @@ public class UniverseDetailFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        fragmenListener = null;
+        fragmentListener = null;
     }
 
     public void onButtonClick(Button button) {
-        button.setOnClickListener(v -> fragmenListener.toNasaWebsiteHome(getContext()));
+        button.setOnClickListener(v -> fragmentListener.navigateToNasaWebsiteHome(getContext()));
     }
 
     public void setTextViews(View view) {
@@ -100,8 +99,8 @@ public class UniverseDetailFragment extends Fragment {
         nameView.setText(name);
         fact1View.setText(fact1);
         textView.setText((text));
-        fragmenListener.setTextToSpeechToViews(nameView);
-        fragmenListener.setTextToSpeechToViews(fact1View);
-        fragmenListener.setTextToSpeechToViews(textView);
+        fragmentListener.setTextToSpeechToViews(nameView);
+        fragmentListener.setTextToSpeechToViews(fact1View);
+        fragmentListener.setTextToSpeechToViews(textView);
     }
 }

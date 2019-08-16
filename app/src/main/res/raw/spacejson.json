@@ -1,0 +1,117 @@
+{
+  "space": [
+    {
+      "solarSystem": [
+        {
+          "name": "The Sun",
+          "fact1": "The energy from the sun is called the solar wind",
+          "fact2": "Sudden huge explosions of energy are called solar flares",
+          "text": "The sun is the star at the middle of our solar system. It provides heat and light for life on earth. The sun is so big its diameter is 109 times that of earth! It is made of hydrogen and helium gas, with a surface temperature of 9,932 degrees fahrenheit.",
+          "image": "https://solarsystem.nasa.gov/system/downloadable_items/1068_oct_1_2015_flare.jpg"
+        },
+        {
+          "name": "Mercury",
+          "fact1": "Mercury is the closest planet to the sun.",
+          "fact2": "Mercury has one the largest impact craters in the solar system.",
+          "text": "Mercury looks very similar to the surface of our moon, and it is covered in craters made when huge asteroids crashed into the surface. It is so dense in Mercury, it has a large core made of pure molten iron.",
+          "image": "https://solarsystem.nasa.gov/system/downloadable_items/1073_PIA16853.jpg"
+        },
+        {
+          "name": "Venus",
+          "fact1": "Venus is the hottest planet is our solar system.",
+          "fact2": "It is sometimes called Earth's sister planet.",
+          "text": "Venus' surface temperature is so hot it could melt lead, its air is mainly composed or carbon dioxide, and has layers of poisonous sulphuric acid clouds in its atmosphere.",
+          "image": "https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/PIA00104_hires_16x9.jpg?itok=jOaH8vOu"
+        },
+        {
+          "name": "Earth",
+          "fact1": "It's called the blue planet beause oceans cover 70% of the Earth's surface.",
+          "fact2": "The ozone layer protects us from the sun's harmful rays.",
+          "text": "Earth is the only known planet with life. The earth takes 24 hours to rotate on its axis, giving us day and night. It takes 365 days for Earth to orbit the sun, giving us changes in seasons.",
+          "image": "https://solarsystem.nasa.gov/system/stellar_items/image_files/4_earth.jpg"
+        },
+        {
+          "name": "Mars",
+          "fact1": "Mars is called the red planet.",
+          "fact2": "Huge craters, valleys, and mountains cover the surface.",
+          "text": "Mars' red shade is made by iron in the planet's surface. It is the planet that is most like Earth, though it is much colder. Scientists have discovered ice beneath its surface. This may mean that life once existed there!",
+          "image": "https://mars.nasa.gov/system/downloadable_items/37019_Mars_globe_1840x1840.jpg"
+        },
+        {
+          "name": "Jupiter",
+          "fact1": "Jupiter is the biggest planet in our solar system.",
+          "fact2": "Its Great Red Spot is a huge storm 3 times the size of Earth.",
+          "text": "Jupiter is a very windy planet with winds of more than 400mph. It is covered in thick red, brown, yellow and white clouds. It is made mainly from gas and is know as one of the four Gas Giants.",
+          "image": "https://www.nasa.gov/centers/goddard/images/content/381775main_LARGEST_jupiter_sphere_946-710.jpg"
+        },
+        {
+          "name": "Saturn",
+          "fact1": "Saturn is second largest planet in our solar system.",
+          "fact2": "A day on Saturn lasts only 10 hours!",
+          "text": "Saturn has 9 beautiful rings that can be seen with a telescope. Its rings are made ice, rocks and dust from comets, asteroids or shattered moons.",
+          "image": "https://solarsystem.nasa.gov/system/resources/detail_files/14379_IMG003379.jpg"
+        },
+        {
+          "name": "Uranus",
+          "fact1": "Uranus is the only planet that rotates on its side.",
+          "fact2": "It has 27 moons.",
+          "text": "Uranus is so far away, that traveling from the Sun to Saturn is only half way there! The bright blue color comes from methane gas. What lied beneath its clouds remains a mystery.",
+          "image": "https://solarsystem.nasa.gov/system/feature_items/images/89_uranus_carousel_1.jpg"
+        },
+        {
+          "name": "Neptune",
+          "fact1": "Neptune is the furthest planet out from the sun.",
+          "fact2": "Its Great Dark Spot is a storm the size of planet Earth.",
+          "text": "Neptune is a cold icy giant. It is very blue due to methane gas. It takes 165 years to orbit the Sun, meaning that its winter lasts for 40 years. Voyager 2 is the first and only spacecraft to pass this planet.",
+          "image": "https://solarsystem.nasa.gov/system/downloadable_items/810_PIA01492.jpg"
+        }
+      ]
+    },
+    {
+      "universe": [
+        {
+          "name": "Milky Way Galaxy",
+          "fact1": "Galaxies come in all different shapes. This one is spiral.",
+          "text": "The Milky Way galaxy is home to our solar system. It is just one of the billions of galaxies that exist in the known universe. it contains between 200-400 billion stars and some 50 billion planets!",
+          "image": "https://www.nasa.gov/images/content/188404main_hurt_Milky_Way_2005-590_lg.jpg"
+        },
+        {
+          "name": "Space Rocks",
+          "fact1": "Two famous space rocks are Asteroid Ida and Halley's Comet.",
+          "text": "There are space rocks of all shape and sizes: icy shimmering comets, huge irregular shaped asteroids the size of planets, and meteors that can enter the Earth's atmosphere as shooting stars.",
+          "image": "https://www.jpl.nasa.gov/images/asteroid/20150126/asteroid20161103-16.jpg"
+        },
+        {
+          "name": "Stars",
+          "fact1": "The Sun is the closest star.",
+          "text": "The number of stars is too many to say. The Milky Way galaxy alone has 200-400 billion stars! Their color can range from red to white to blue. Their color indicates heat, with red being the coolest.",
+          "image": "https://www.nasa.gov/sites/default/files/thumbnails/image/potw1809a.jpg"
+        },
+        {
+          "name": "The Moon",
+          "fact1": "In 1969, Neil Armstrong, an American astronut, became the first man to walk on the moon.",
+          "text": "The moon is 4.5 billion years old. It is a dry, dusty place with no air. It is covered in craters made by huge meteoroids crashing into its surface. The moon takes 27 days, 7 hours, 43 minutes, 11.6 seconds to orbit the Earth.",
+          "image": "https://solarsystem.nasa.gov/system/news_items/main_images/774_edu_distance_to_the_moon.png"
+        },
+        {
+          "name": "Rockets",
+          "fact1": "The biggest rocket ever was Saturn V at over 300 feet.",
+          "text": "Rocket missions are controlled at mission control by teams of scientists, engineers, and flight controllers. Huge rockets are ignited on a launch pad. The rockets gain enough power to take off, rise up and enter space, climbing over 1,000 feet in a few seconds.",
+          "image": "https://www.nasa.gov/images/content/541922main_atlasvcloseup.jpg"
+        },
+        {
+          "name": "Satellites",
+          "fact1": "The first satellite, Sputnik 1, was launched by Russia in 1957.",
+          "text": "The are thousands of man-made satellites orbiting the Earth. We use them to monitor space and our planet. They send data and signals back down to satellite dishes, which we use every day for mmobile devices, satellite TV, weather reports, and navigation.",
+          "image": "https://www.nasa.gov/sites/default/files/gpm.jpg"
+        },
+        {
+          "name": "Space Station",
+          "fact1": "The International Space Station is about the same length as a soccer field.",
+          "text": "The longest serving and biggest space station ever is the International Space Station. It allows astronuts to live and work in space for long periods of time. Solar arrays help power the space station. The ISS orbits the Earth 16 times a day.",
+          "image": "https://www.nasa.gov/sites/default/files/thumbnails/image/m15-132_space_station.jpg"
+        }
+      ]
+    }
+  ]
+}

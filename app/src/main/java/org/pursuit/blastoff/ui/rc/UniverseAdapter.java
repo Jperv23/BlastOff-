@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.ui;
+package org.pursuit.blastoff.ui.rc;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,18 +8,19 @@ import android.view.ViewGroup;
 
 import org.pursuit.blastoff.R;
 import org.pursuit.blastoff.model.Universe;
+import org.pursuit.blastoff.ui.fragments.FragmentListener;
 
 import java.util.List;
 
 public class UniverseAdapter extends RecyclerView.Adapter<UniverseViewHolder> {
 
     private List<Universe> universeList;
-    private FragmenListener fragmenListener;
+    private FragmentListener fragmentListener;
 
     public UniverseAdapter(List<Universe> universeList,
-                           FragmenListener fragmenListener) {
+                           FragmentListener fragmentListener) {
         this.universeList = universeList;
-        this.fragmenListener = fragmenListener;
+        this.fragmentListener = fragmentListener;
     }
 
     @NonNull
@@ -32,7 +33,7 @@ public class UniverseAdapter extends RecyclerView.Adapter<UniverseViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull UniverseViewHolder spaceViewHolder, int i) {
-        spaceViewHolder.onBind(universeList.get(i), fragmenListener);
+        spaceViewHolder.onBind(universeList.get(i), fragmentListener);
     }
 
     @Override
