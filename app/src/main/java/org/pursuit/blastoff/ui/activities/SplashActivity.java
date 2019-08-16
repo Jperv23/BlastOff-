@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.activities;
+package org.pursuit.blastoff.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;

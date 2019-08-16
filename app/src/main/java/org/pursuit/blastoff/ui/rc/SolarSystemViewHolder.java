@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.view;
+package org.pursuit.blastoff.ui.rc;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -10,8 +10,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.fragments.FragmenListener;
 import org.pursuit.blastoff.model.SolarSystem;
+import org.pursuit.blastoff.ui.fragments.FragmentListener;
 
 public class SolarSystemViewHolder extends RecyclerView.ViewHolder {
 
@@ -25,9 +25,9 @@ public class SolarSystemViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void onBind(final SolarSystem solarSystem,
-                       final FragmenListener fragmenListener) {
+                       final FragmentListener fragmentListener) {
         nameView.setText(solarSystem.getName());
-        fragmenListener.setTextToSpeechToViews(nameView);
+        fragmentListener.setTextToSpeechToViews(nameView);
         Glide.with(itemView)
                 .load(solarSystem.getImage())
                 .placeholder(R.drawable.ic_launcher_foreground)
@@ -39,7 +39,7 @@ public class SolarSystemViewHolder extends RecyclerView.ViewHolder {
             String fact2 = solarSystem.getFact2();
             String text = solarSystem.getText();
             String imageURL = solarSystem.getImage();
-            fragmenListener.toDetailSolarSystemFragment(
+            fragmentListener.onDetailSolarSystemFragmentInteraction(
                     name, fact1, fact2, text, imageURL
             );
         });

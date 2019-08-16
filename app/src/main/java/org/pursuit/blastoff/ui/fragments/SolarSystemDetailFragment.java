@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.fragments;
+package org.pursuit.blastoff.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -18,7 +18,7 @@ import org.pursuit.blastoff.R;
 
 public class SolarSystemDetailFragment extends Fragment {
 
-    FragmenListener fragmenListener;
+    private FragmentListener fragmentListener;
 
     private static final String NAME_KEY = "param1";
     private static final String FACT1_KEY = "param2";
@@ -48,11 +48,11 @@ public class SolarSystemDetailFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof FragmenListener) {
-            fragmenListener = (FragmenListener) context;
+        if (context instanceof FragmentListener) {
+            fragmentListener = (FragmentListener) context;
         } else {
             throw new RuntimeException(context.toString() +
-                    " must implement FragmenListener");
+                    " must implement FragmentListener");
         }
     }
 
@@ -89,11 +89,11 @@ public class SolarSystemDetailFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        fragmenListener = null;
+        fragmentListener = null;
     }
 
     public void onButtonClick(Button button) {
-        button.setOnClickListener(v -> fragmenListener.toNasaWebsiteSS(name, getContext()));
+        button.setOnClickListener(v -> fragmentListener.navigateToNasaWebsiteSolarSystem(name, getContext()));
     }
 
     public void setTextViews(View view) {
@@ -105,9 +105,9 @@ public class SolarSystemDetailFragment extends Fragment {
         fact1View.setText(fact1);
         fact2View.setText(fact2);
         textView.setText(text);
-        fragmenListener.setTextToSpeechToViews(nameView);
-        fragmenListener.setTextToSpeechToViews(fact1View);
-        fragmenListener.setTextToSpeechToViews(fact2View);
-        fragmenListener.setTextToSpeechToViews(textView);
+        fragmentListener.setTextToSpeechToViews(nameView);
+        fragmentListener.setTextToSpeechToViews(fact1View);
+        fragmentListener.setTextToSpeechToViews(fact2View);
+        fragmentListener.setTextToSpeechToViews(textView);
     }
 }

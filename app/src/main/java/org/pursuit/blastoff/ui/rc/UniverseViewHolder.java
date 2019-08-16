@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.view;
+package org.pursuit.blastoff.ui.rc;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,8 +9,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.fragments.FragmenListener;
 import org.pursuit.blastoff.model.Universe;
+import org.pursuit.blastoff.ui.fragments.FragmentListener;
 
 public class UniverseViewHolder extends RecyclerView.ViewHolder {
 
@@ -24,19 +24,22 @@ public class UniverseViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void onBind(final Universe universe,
-                       final FragmenListener fragmenListener) {
+                       final FragmentListener fragmentListener) {
         nameView.setText(universe.getName());
-        fragmenListener.setTextToSpeechToViews(nameView);
+        fragmentListener.setTextToSpeechToViews(nameView);
         Glide.with(itemView)
                 .load(universe.getImage())
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .into(imageView);
         itemView.setOnClickListener(v -> {
             String name = universe.getName();
+            System.out.println(name);
             String fact1 = universe.getFact1();
+            System.out.println(fact1);
             String text = universe.getText();
+            System.out.println(text);
             String imageURL = universe.getImage();
-            fragmenListener.toDetailUniverseFragment(
+            fragmentListener.onDetailUniverseFragmentInteraction(
                     name, fact1, text, imageURL
             );
         });

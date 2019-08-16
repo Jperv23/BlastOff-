@@ -1,4 +1,4 @@
-package org.pursuit.blastoff.controller;
+package org.pursuit.blastoff.ui.rc;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,21 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.pursuit.blastoff.R;
-import org.pursuit.blastoff.fragments.FragmenListener;
 import org.pursuit.blastoff.model.SolarSystem;
-import org.pursuit.blastoff.view.SolarSystemViewHolder;
+import org.pursuit.blastoff.ui.fragments.FragmentListener;
 
 import java.util.List;
 
 public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemViewHolder> {
 
     private List<SolarSystem> solarSystemList;
-    private FragmenListener fragmenListener;
+    private FragmentListener fragmentListener;
 
     public SolarSystemAdapter(List<SolarSystem> solarSystemList,
-                              FragmenListener fragmenListener) {
+                              FragmentListener fragmentListener) {
         this.solarSystemList = solarSystemList;
-        this.fragmenListener = fragmenListener;
+        this.fragmentListener = fragmentListener;
     }
 
     @NonNull
@@ -34,7 +33,7 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemViewHold
 
     @Override
     public void onBindViewHolder(@NonNull SolarSystemViewHolder solarSytemViewHolder, int i) {
-        solarSytemViewHolder.onBind(solarSystemList.get(i), fragmenListener);
+        solarSytemViewHolder.onBind(solarSystemList.get(i), fragmentListener);
     }
 
     @Override

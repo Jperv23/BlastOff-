@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FC19191F"
-    tools:context=".activities.HostActivity">
+    tools:context=".ui.activities.HostActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBar"
