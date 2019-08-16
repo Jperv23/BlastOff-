@@ -9,11 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.pursuit.blastoff.R;
-
-import pl.droidsonroids.gif.GifImageView;
 
 public class ChoiceFragment extends Fragment {
 
@@ -62,13 +61,13 @@ public class ChoiceFragment extends Fragment {
     }
 
     public void onUniverseImageClick(View view) {
-        GifImageView universeImage = view.findViewById(R.id.universeImage);
+        ImageView universeImage = view.findViewById(R.id.universeImage);
         universeImage.isClickable();
         universeImage.setOnClickListener(v -> fragmentListener.onUniverseFragmentInteraction());
     }
 
     public void onSolarSystemImageClick(View view) {
-        GifImageView solarSystemImage = view.findViewById(R.id.solarSystemImage);
+        ImageView solarSystemImage = view.findViewById(R.id.solarSystemImage);
         solarSystemImage.setOnClickListener(v -> fragmentListener.onSolarSystemFragmentInteraction());
     }
 

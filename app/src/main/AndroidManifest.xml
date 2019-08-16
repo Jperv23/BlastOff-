@@ -11,7 +11,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_rocket"
         android:label="BLASTOFF"
-        android:roundIcon="@mipmap/ic_rocket_round"
+        android:roundIcon="@mipmap/ic_rocket_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity

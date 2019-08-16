@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimaryDark">#12161A</color>
-    <color name="colorPrimary">#E91E63</color>
-    <color name="colorAccent">#E7487E</color>
+    <color name="colorPrimary">#DD3FD2E2</color>
+    <color name="colorAccent">#FF5722</color>
+    <!--<color name="colorPrimary">#E91E63</color>-->
+    <!--<color name="colorAccent">#E7487E</color>-->
     <color name="text_color">#fff</color>
     <color name="imageViews_background">#16191B</color>
     <color name="imageView_background_2">#141414</color>
     <color name="cons_layout_background">#000</color>
-    <color name="blue_background">#0DA7E4</color>
+    <!--<color name="blue_background">#DD3FD2E2</color>-->
+    <color name="purple_background">#E27C398B</color>
     <color name="toolbar_views_background">#63504848</color>
 </resources>
 
